@@ -1,0 +1,59 @@
+body{
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight:400;
+}
+
+p, h1{
+  margin:0;
+}
+
+.font-bold{
+  font-weight:700
+}
+
+.font-thin{
+  font-weight:400
+}
+
+.App {
+  text-align: center;
+  width: 72%;
+  margin:auto;
+  padding-top:3rem;
+  position:relative;
+  top:-240px;
+}
+
+.header{
+  display:flex;
+  justify-content: space-between;
+}
+
+.social-card-overview:hover{
+  opacity:70%;
+  cursor:pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .App{
+    width:80%;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .header .header-title{
+    margin-bottom:20px;
+    border-bottom:2px solid hsl(228, 34%, 66%);
+    padding-bottom:2px;
+  }
+  .header-title h1{
+    text-align:left;
+  }
+}

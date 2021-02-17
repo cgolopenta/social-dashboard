@@ -7,6 +7,7 @@ body {
 p,
 h1 {
     margin: 0;
+    white-space: nowrap;
 }
 
 .font-bold {
@@ -62,7 +63,7 @@ h1 {
     height: 10rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     .App {
         width: 80%;
     }
@@ -76,5 +77,6 @@ h1 {
     }
     .header-title h1 {
         text-align: left;
+        white-space: nowrap;
     }
 }

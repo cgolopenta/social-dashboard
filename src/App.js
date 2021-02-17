@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 
 import "./App.css";
 import { servicesMetadata, metricsMetadata } from "./data/SocialServicesData";
@@ -23,9 +23,7 @@ const GlobalStyle = createGlobalStyle`
 }
 .text-primary{
   color:${(props) =>
-      props.theme.darkMode === true
-          ? "hsl(0, 0%, 100%)"
-          : "color:hsl(230, 17%, 14%)"}
+      props.theme.darkMode === true ? "hsl(0, 0%, 100%)" : "hsl(230, 17%, 14%)"}
 }
 .text-secondary{
   color:${(props) =>
@@ -81,6 +79,24 @@ function App() {
             return newValue;
         });
     };
+
+    useLayoutEffect(() => {
+        const switchPrimaryColor = darkMode
+            ? "linear-gradient(to right, hsl(210, 78%, 56%),hsl(146, 68%, 55%))"
+            : "hsl(230, 22%, 74%)";
+        const switchElement = document.getElementsByClassName(
+            "MuiSwitch-track"
+        )[0];
+        switchElement.style.background = switchPrimaryColor;
+
+        const switchSecondaryColor = darkMode
+            ? "hsl(228,28%,20%)"
+            : "hsl(227,47%,96%)";
+        const switchButton = document.getElementsByClassName(
+            "MuiSwitch-thumb"
+        )[0];
+        switchButton.style.background = switchSecondaryColor;
+    }, [darkMode]);
     return (
         <ThemeProvider theme={{ darkMode }}>
             <GlobalStyle />

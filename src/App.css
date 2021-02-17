@@ -1,59 +1,80 @@
-body{
-  font-family: 'Inter';
-  font-size: 14px;
-  font-weight:400;
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
 }
 
-p, h1{
-  margin:0;
+p,
+h1 {
+    margin: 0;
 }
 
-.font-bold{
-  font-weight:700
+.font-bold {
+    font-weight: 700;
 }
 
-.font-thin{
-  font-weight:400
+.font-thin {
+    font-weight: 400;
 }
 
 .App {
-  text-align: center;
-  width: 72%;
-  margin:auto;
-  padding-top:3rem;
-  position:relative;
-  top:-240px;
+    text-align: center;
+    width: 72%;
+    margin: auto;
+    padding-top: 3rem;
+    position: relative;
+    top: -240px;
 }
 
-.header{
-  display:flex;
-  justify-content: space-between;
+.header {
+    display: flex;
+    justify-content: space-between;
 }
 
-.social-card-overview:hover{
-  opacity:70%;
-  cursor:pointer;
+.card:hover {
+    /* opacity:70%; */
+    cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-gradient-border {
+    position: relative;
+    background-clip: padding-box; /* !importanté */
+    border-top: solid 5px transparent; /* !importanté */
+}
+
+.card-gradient-border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -10;
+    margin: -5px; /* !importanté */
+    border-radius: 5px; /* !importanté */
+    background: linear-gradient(
+        to right,
+        hsl(37, 97%, 70%),
+        hsl(329, 70%, 58%)
+    );
+    width: 13.9rem;
+    left: 0.4rem;
+    height: 10rem;
 }
 
 @media screen and (max-width: 600px) {
-  .App{
-    width:80%;
-  }
-  .header {
-    flex-direction: column;
-  }
-  .header .header-title{
-    margin-bottom:20px;
-    border-bottom:2px solid hsl(228, 34%, 66%);
-    padding-bottom:2px;
-  }
-  .header-title h1{
-    text-align:left;
-  }
+    .App {
+        width: 80%;
+    }
+    .header {
+        flex-direction: column;
+    }
+    .header .header-title {
+        margin-bottom: 20px;
+        border-bottom: 2px solid hsl(228, 34%, 66%);
+        padding-bottom: 2px;
+    }
+    .header-title h1 {
+        text-align: left;
+    }
 }
